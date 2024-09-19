@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Register extends StatefulWidget {
   final String userId;
-  const Register({required this.userId});
+  const Register({super.key, required this.userId});
 
   @override
   State<Register> createState() => _RegisterState();
@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
 
   Future<Map<String, dynamic>> _newRegister(
       String email, String password, String referralCode, String userId) async {
-    final apiEndpoint =
+    const apiEndpoint =
         'http://devapiv4.dealsdray.com/api/v2/user/email/referral';
     final response = await http.post(
       Uri.parse(apiEndpoint),
@@ -63,7 +63,7 @@ class _RegisterState extends State<Register> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Home(),
+              builder: (context) => const Home(),
             ),
           );
         }
@@ -115,8 +115,8 @@ class _RegisterState extends State<Register> {
                     child: Column(
                       children: [
                         TextFormField(
-                          decoration:
-                              InputDecoration(labelText: "Enter Your Email"),
+                          decoration: const InputDecoration(
+                              labelText: "Enter Your Email"),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your email address.';
@@ -126,10 +126,10 @@ class _RegisterState extends State<Register> {
                           onSaved: (value) =>
                               _email = value!, // Save email on form submission
                         ),
-                        SizedBox(height: 50),
+                        const SizedBox(height: 50),
                         TextFormField(
-                          decoration:
-                              InputDecoration(labelText: " Create Password"),
+                          decoration: const InputDecoration(
+                              labelText: " Create Password"),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password.';
@@ -141,9 +141,9 @@ class _RegisterState extends State<Register> {
                               value!, // Save password on form submission
                           obscureText: true, // Hide password input
                         ),
-                        SizedBox(height: 50),
+                        const SizedBox(height: 50),
                         TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               labelText: "Referral Code (Optional)"),
                           onSaved: (value) => _referralCode =
                               value!, // Save referral code on form submission
@@ -152,7 +152,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                 ),
-                SizedBox(height: 180),
+                const SizedBox(height: 180),
                 FadeInDown(
                   child: MaterialButton(
                     onPressed: () {
@@ -168,9 +168,10 @@ class _RegisterState extends State<Register> {
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)),
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
                     minWidth: double.infinity,
-                    child: Text(
+                    child: const Text(
                       "Register",
                       style: TextStyle(
                         color: Colors.white,

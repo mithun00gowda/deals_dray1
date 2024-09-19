@@ -14,7 +14,7 @@ class _cart_ScreenState extends State<cart_Screen> {
     return Scaffold(
       body: Center(
         child: Container(
-          child: Text('Cart'),
+          child: const Text('Cart'),
         ),
       ),
     );

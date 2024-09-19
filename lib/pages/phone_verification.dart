@@ -10,7 +10,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class PhoneNumber_verification extends StatefulWidget {
   final String deviceId;
-  const PhoneNumber_verification({required this.deviceId});
+  const PhoneNumber_verification({super.key, required this.deviceId});
 
   @override
   State<PhoneNumber_verification> createState() =>
@@ -39,7 +39,7 @@ class _PhoneNumber_verificationState extends State<PhoneNumber_verification> {
     print(deviceId);
 
     // Replace with your API endpoint, headers, and body
-    final apiEndpoint = 'http://devapiv4.dealsdray.com/api/v2/user/otp';
+    const apiEndpoint = 'http://devapiv4.dealsdray.com/api/v2/user/otp';
     final response = await http.post(
       Uri.parse(apiEndpoint),
       body: {
@@ -122,16 +122,17 @@ class _PhoneNumber_verificationState extends State<PhoneNumber_verification> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 FadeInDown(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                     child: Stack(
                       children: [
                         IntlPhoneField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Phone Number',
                             border: OutlineInputBorder(
                               borderSide: BorderSide(),
@@ -150,7 +151,7 @@ class _PhoneNumber_verificationState extends State<PhoneNumber_verification> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 250,
                 ),
                 FadeInDown(
@@ -174,9 +175,10 @@ class _PhoneNumber_verificationState extends State<PhoneNumber_verification> {
                   color: Colors.black,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5)),
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                   minWidth: double.infinity,
-                  child: Text(
+                  child: const Text(
                     "Request OTP",
                     style: TextStyle(
                       color: Colors.white,

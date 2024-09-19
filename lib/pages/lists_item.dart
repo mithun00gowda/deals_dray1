@@ -13,7 +13,7 @@ class _ListsItemState extends State<ListsItem> {
     return Scaffold(
       body: Center(
         child: Container(
-          child: Text('List'),
+          child: const Text('List'),
         ),
       ),
     );

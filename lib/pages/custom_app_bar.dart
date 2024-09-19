@@ -11,14 +11,16 @@ class CustomAppBar extends StatelessWidget {
       children: [
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: kcontentColor, padding: EdgeInsets.all(20)),
+                backgroundColor: kcontentColor,
+                padding: const EdgeInsets.all(20)),
             onPressed: () {},
-            icon: Icon(Icons.menu_outlined)),
+            icon: const Icon(Icons.menu_outlined)),
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: kcontentColor, padding: EdgeInsets.all(20)),
+                backgroundColor: kcontentColor,
+                padding: const EdgeInsets.all(20)),
             onPressed: () {},
-            icon: Icon(Icons.notifications_outlined)),
+            icon: const Icon(Icons.notifications_outlined)),
       ],
     );
   }

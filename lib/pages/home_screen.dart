@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             const Categoriesscreen(),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -64,9 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   return;

@@ -18,11 +18,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     int currentIndex = 2;
     List sreens = [
-      ListsItem(),
-      Favorite(),
-      HomeScreen(),
-      cart_Screen(),
-      Profile(),
+      const ListsItem(),
+      const Favorite(),
+      const HomeScreen(),
+      const cart_Screen(),
+      const Profile(),
     ];
     return Scaffold(
       floatingActionButton: FloatingActionButton(
@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
           });
         },
         backgroundColor: kPrimaryColor,
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
         child: const Icon(
           Icons.home,
           color: Colors.white,
@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
         elevation: 1,
         height: 60,
         color: Colors.white,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 20,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Row(
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                   color:
                       currentIndex == 1 ? kPrimaryColor : Colors.grey.shade400,
                 )),
-            SizedBox(
+            const SizedBox(
               width: 15,
             ),
             IconButton(

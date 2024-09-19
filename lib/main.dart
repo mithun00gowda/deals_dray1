@@ -1,5 +1,3 @@
-import 'package:deals_dray/home.dart';
-import 'package:deals_dray/pages/register.dart';
 import 'package:deals_dray/splash.dart';
 import 'package:flutter/material.dart';
 

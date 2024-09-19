@@ -11,6 +11,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 class OtpVerification extends StatefulWidget {
   final String userId, deviceId, phoneNumber;
   const OtpVerification({
+    super.key,
     required this.deviceId,
     required this.userId,
     required this.phoneNumber,
@@ -36,7 +37,7 @@ class _OtpVerificationState extends State<OtpVerification> {
 
   Future<Map<String, dynamic>> otpVerification(
       String otp, String userId, String deviceId) async {
-    final apiEndpoint =
+    const apiEndpoint =
         'http://devapiv4.dealsdray.com/api/v2/user/otp/verification';
     final response = await http.post(
       Uri.parse(apiEndpoint),
@@ -61,7 +62,7 @@ class _OtpVerificationState extends State<OtpVerification> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Home(),
+              builder: (context) => const Home(),
             ),
           );
         }
@@ -80,7 +81,7 @@ class _OtpVerificationState extends State<OtpVerification> {
     String mobileNumber,
   ) async {
     // Implement resend OTP logic here (e.g., call API)
-    final apiEndpoint =
+    const apiEndpoint =
         'http://devapiv4.dealsdray.com/api/v2/user/otp/resendhttp://devapiv4.dealsdray.com/api/v2/user/otp';
     final response = await http.post(
       Uri.parse(apiEndpoint),
@@ -110,7 +111,7 @@ class _OtpVerificationState extends State<OtpVerification> {
 
   @override
   Widget build(BuildContext context) {
-    String number = '${widget.phoneNumber}';
+    String number = widget.phoneNumber;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -137,13 +138,13 @@ class _OtpVerificationState extends State<OtpVerification> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 10),
                     child: Text(
-                      "We have Sent a Unique OTP number to Your mobile +91 ${number}",
+                      "We have Sent a Unique OTP number to Your mobile +91 $number",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.grey.shade700),
                     ),
                   ),
                 ),
-                SizedBox(height: 80),
+                const SizedBox(height: 80),
                 FadeInDown(
                   child: OtpTextField(
                     numberOfFields: 4,
@@ -154,7 +155,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     },
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -172,12 +173,12 @@ class _OtpVerificationState extends State<OtpVerification> {
                         _isResendButtonDisabled
                             ? 'Resend OTP in ${_resendOtpCooldown}s'
                             : 'Resend OTP',
-                        style: TextStyle(color: Colors.blue),
+                        style: const TextStyle(color: Colors.blue),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 300),
+                const SizedBox(height: 300),
                 FadeInDown(
                   child: MaterialButton(
                     onPressed: () {
@@ -197,9 +198,10 @@ class _OtpVerificationState extends State<OtpVerification> {
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)),
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 50),
                     minWidth: double.infinity,
-                    child: Text(
+                    child: const Text(
                       "Verify OTP",
                       style: TextStyle(
                         color: Colors.white,

@@ -30,10 +30,10 @@ class _SplashState extends State<Splash> {
         future: getDeviceInfoAndMakeApiCall(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator()); // Show loading indicator
           } else if (snapshot.hasError) {
-            return Center(
+            return const Center(
                 child: Text('Error fetching device info or making API call'));
           } else {
             // Handle API response and navigate to appropriate screen
@@ -45,7 +45,7 @@ class _SplashState extends State<Splash> {
               // Navigate to specific screen based on deviceId
             } else {
               // Handle API error and navigate to appropriate screen
-              return Center(child: Text('API call failed'));
+              return const Center(child: Text('API call failed'));
             }
           }
         },

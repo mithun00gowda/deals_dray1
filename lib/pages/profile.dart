@@ -13,7 +13,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       body: Center(
         child: Container(
-          child: Text('Profile'),
+          child: const Text('Profile'),
         ),
       ),
     );
